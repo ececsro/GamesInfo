@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: games-info-server-deploy
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: games-info-server-deploy
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: games-info-server-deploy
+    spec:
+      containers:
+      - name: games-info-server-deploy
+        image: games-info-server:v190321.1
+        ports:
+        - containerPort: 8443
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: games-info-mail-deploy
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: games-info-mail-deploy
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: games-info-mail-deploy
+    spec:
+      containers:
+      - name: games-info-mail-deploy
+        image: games-info-mail:v190321.1
+        ports:
+        - containerPort: 8080
+ 
+        
