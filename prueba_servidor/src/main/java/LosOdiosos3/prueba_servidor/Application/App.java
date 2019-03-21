@@ -37,8 +37,9 @@ public class App {
 	    Config config = new Config();
 	    JoinConfig joinConfig = config.getNetworkConfig().getJoin();	    
 	    joinConfig.getMulticastConfig().setEnabled(false);
-	    joinConfig.getTcpIpConfig().addMember( "192.168.33.13" ).addMember( "168.192.33.10" )
-	    .setEnabled( true );
+//	    joinConfig.getTcpIpConfig().addMember( "192.168.33.13" ).addMember( "168.192.33.10" )
+//	    .setEnabled( true );
+	    joinConfig.getTcpIpConfig().addMember( "games-info.minikube.io" ).setEnabled( true );
 	    return config;
     }
     
