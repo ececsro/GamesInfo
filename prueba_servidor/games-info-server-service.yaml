@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: games-info-server-service
   labels:
-    app: carlos.sanchezro
+    app: games-info-server-service
 spec:
+  type: NodePort
   ports:
     - port: 8443
       targetPort: 8443
@@ -12,7 +13,6 @@ spec:
       name: games-info-port
   selector:
     app: games-info-server-service
-  type: NodePort
 ---
 apiVersion: v1
 kind: Service
@@ -21,10 +21,10 @@ metadata:
   labels:
     app: carlos.sanchezro
 spec:
+  type: ClusterIP
   ports:
   - port: 8080
     protocol: TCP
     name: games-info-mail-port
   selector:
     app: games-info-mail-service
-  type: ClusterIP
