@@ -39,7 +39,7 @@ public class App {
 	    joinConfig.getMulticastConfig().setEnabled(false);
 //	    joinConfig.getTcpIpConfig().addMember( "192.168.33.13" ).addMember( "168.192.33.10" )
 //	    .setEnabled( true );
-	    joinConfig.getTcpIpConfig().addMember( "games-info.minikube.io" ).setEnabled( true );
+	    joinConfig.getTcpIpConfig().addMember( "localhost" ).setEnabled( true );
 	    return config;
     }
     
